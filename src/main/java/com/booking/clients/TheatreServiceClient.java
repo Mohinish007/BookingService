@@ -22,6 +22,6 @@ public interface TheatreServiceClient {
     @PutMapping("theatreService/api/show/{showId}/seat/updateSeatInventory")
     void updateSeatInventory(@PathVariable("showId") Long showId, @RequestBody SeatUpdateRequest seatUpdateRequests);
 
-    @GetMapping("theatreService/theater/shows/{id}")
+    @GetMapping("theatreService/theater/show/{id}")
     ShowDTO getShowById(@PathVariable("id") Long id);
 }
