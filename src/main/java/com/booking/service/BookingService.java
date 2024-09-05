@@ -144,15 +144,4 @@ public class BookingService {
         return basePrice.multiply(BigDecimal.valueOf(request.getNumberOfTickets()));
     }
 
-    private BigDecimal calculateDiscount(BookingRequest request, ShowDetails showDetails) {
-        // Implement discount calculation logic based on business rules
-        BigDecimal discount = BigDecimal.ZERO;
-        if (request.getNumberOfTickets() >= 3) {
-            discount = showDetails.getPrice().multiply(BigDecimal.valueOf(0.5));
-        }
-        if (showDetails.getShowTime().getHour() >= 12 && showDetails.getShowTime().getHour() < 17) {
-            discount = discount.add(showDetails.getPrice().multiply(BigDecimal.valueOf(0.2)));
-        }
-        return discount;
-    }
 }
